@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMOKINK BH | Elite Vaping Pampulha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="ignite.png" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="smoke-canvas"></canvas>
+
+    <div id="hacker-preloader">
+        <div class="loader-content">
+            <div class="matrix-text">INICIALIZANDO SMOKING_BH_OS...</div>
+            <div class="progress-container"><div class="progress-bar" id="load-progress"></div></div>
+        </div>
+    </div>
+
+    <nav class="site-nav">
+        <div class="content-wrap nav-inner">
+            <div class="brand" onclick="secretAccess()" style="cursor: pointer;">
+                <h1 class="brand-title">SMOKINK <span class="cyan-text">BH</span></h1>
+                <span class="brand-subtitle">PREMIUM VAPE DELIVERY</span>
+            </div>
+            <div class="nav-links">
+                <button onclick="switchView('store')" class="nav-btn active" id="nav-store">VITRINE</button>
+                <button onclick="switchView('contact')" class="nav-btn" id="nav-contact">CONTATO</button>
+                <button onclick="switchView('admin')" class="nav-btn hidden" id="nav-admin">GESTOR</button>
+                <button id="cart-btn" class="cart-pill">🛒 [<span id="cart-count">0</span>]</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="content-wrap">
+        
+        <div id="view-store" class="view-section">
+            <header class="hero-section glass-panel">
+                <div class="hero-info">
+                    <div class="security-badge">PAMPULHA & REGIÃO</div>
+                    <h2 class="glitch-title">SMOKINK <span class="cyan-text">SHOP</span></h2>
+                    <p>Qualidade premium e procedência garantida. Finalize seu pedido pelo WhatsApp.</p>
+                </div>
+            </header>
+
+            <div class="section-title"><h3>LINHA PREMIUM DISPONÍVEL</h3></div>
+            <div id="products-grid" class="products-container"></div>
+        </div>
+
+        <div id="view-contact" class="view-section hidden">
+            <div class="contact-layout">
+                <div class="contact-info glass-panel">
+                    <h3 class="orbitron-text">Canais Oficiais</h3>
+                    <div class="social-btns">
+                        <a href="https://wa.me/5531989202706" target="_blank" class="social-btn wa">WHATSAPP</a>
+                        <a href="https://instagram.com/smoking_bh" target="_blank" class="social-btn ig">INSTAGRAM</a>
+                    </div>
+                </div>
+                <div class="contact-form glass-panel">
+                    <h3 class="orbitron-text">Ouvidoria / Sugestões</h3>
+                    <form id="feedback-form">
+                        <input type="text" id="form-name" placeholder="Seu Nome" required>
+                        <select id="form-type">
+                            <option value="Sugestão">Sugestão</option>
+                            <option value="Elogio">Elogio</option>
+                            <option value="Reclamação">Reclamação</option>
+                        </select>
+                        <textarea id="form-message" placeholder="Sua mensagem..." rows="4" required></textarea>
+                        <button type="submit" class="submit-btn">ENVIAR VIA WHATSAPP</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="view-admin" class="view-section hidden">
+            <div class="admin-header-box glass-panel">
+                <h3 class="orbitron-text">Painel de Gestão</h3>
+                <div class="stats-row">
+                    <div class="stat-card"><span class="stat-val" id="stat-total-stock">0</span><span>Itens em Estoque</span></div>
+                    <div class="stat-card"><span class="stat-val" id="stat-total-sold">0</span><span>Total Vendidos</span></div>
+                </div>
+            </div>
+            <div class="inventory-management glass-panel" style="margin-top:20px; padding: 20px;">
+                <h4 class="orbitron-text">Controle de Sabores</h4>
+                <div id="admin-inventory-list"></div>
+            </div>
+        </div>
+    </main>
+
+    <div id="cart-overlay" class="overlay hidden"></div>
+    <aside id="cart-drawer" class="cart-drawer glass-panel">
+        <div class="drawer-header"><h3>MEU PEDIDO</h3><button id="close-cart" class="close-x">&times;</button></div>
+        <div id="cart-items" class="cart-body"></div>
+        <div class="drawer-footer">
+            <div class="total-box"><span>TOTAL</span><span id="cart-total-price">R$ 0,00</span></div>
+            <button onclick="checkout()" class="checkout-btn">FECHAR NO WHATSAPP</button>
+        </div>
+    </aside>
+
+    <script src="script.js"></script>
+</body>
+</html>
