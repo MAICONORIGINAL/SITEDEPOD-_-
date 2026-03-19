@@ -11,7 +11,7 @@ let clickCount = 0;
 // ESTRUTURA DE ESTOQUE ATUALIZADA
 let inventory = JSON.parse(localStorage.getItem('smokink_inventory')) || [
     { 
-        id: 1, brand: "ELFBAR", price: 110.00 img: "elfobar.png", sold_total: 250,
+        id: 1, brand: "ELFBAR", price: 90.00 img: "elfobar.png", sold_total: 250,
         flavors: [
             { name: "Strawberry Ice", stock: 4 },
             { name: "Icy Mint", stock: 2 },
@@ -22,7 +22,7 @@ let inventory = JSON.parse(localStorage.getItem('smokink_inventory')) || [
         ]
     },
     { 
-        id: 2, brand: "IGNITE ULTRA SLIM", price: 90.00, img: "ignite.png", sold_total: 180,
+        id: 2, brand: "IGNITE ULTRA SLIM", price: 110.00, img: "ignite.png", sold_total: 180,
         flavors: [
             { name: "Strawberry Watermelon Ice", stock: 8 },
             { name: "Watermelon Mix", stock: 9 },
